@@ -24,3 +24,9 @@ def get_user(conn, name):
     SELECT * FROM users WHERE name = ?''', (name,))
     output = cur.fetchone()
     return output[1], output[2]
+
+
+def get_all_records(conn):
+    cur = conn.cursor()
+    output = cur.fetchall()
+    return output
